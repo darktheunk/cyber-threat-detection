@@ -250,8 +250,8 @@ The `data/` subsystem contains synthetic dataset generators, dataset splitters, 
     * **`ThroughputChart.tsx` & `ThreatClassChart.tsx`**: Visual chart components for flows/sec and attack categories.
     * **`useAlerts.ts`**: Custom React hook for live WebSocket alert streaming.
 * **`infra/`**:
-  * Kubernetes manifests (`infra/k8s/`) for production deployment: `namespace.yaml`, `backend-deployment.yaml`, `frontend-deployment.yaml`, `postgres-statefulset.yaml`, `redis-deployment.yaml`, `configmap.yaml`, `secrets.yaml`, and `ingress.yaml`.
-  * Docker Compose configurations (`docker-compose.yml`, `docker-compose.dev.yml`).
+  * Kubernetes manifests (`infra/k8s/`) for the currently configured namespace, backend deployment, shared configuration, and secrets.
+  * The root `docker-compose.yml` provides the local backend, Redis, and frontend stack.
 * **`docs/`**:
   * Specification blueprints outlining architecture, bot specs, feature engineering, alert schemas, blockchain smart contract designs, and demo workflows.
 

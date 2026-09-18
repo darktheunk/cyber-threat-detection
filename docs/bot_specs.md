@@ -143,7 +143,7 @@ Detects unauthorized transmission of confidential enterprise data out of the int
 flowchart LR
     A["Raw Traffic\nSimulations"] --> B["Stratified Splits\n(70/15/15)"]
     B --> C["Automated Training\n(train.py)"]
-    C --> D["Validation & Benchmark\n(model_eval.ipynb)"]
+   C --> D["Validation & Benchmark\n(training outputs)"]
     D --> E["Model Binary Artifact\n(saved_models/*.pkl)"]
     E --> F["Dynamic Registry\n(model_registry.py)"]
 ```

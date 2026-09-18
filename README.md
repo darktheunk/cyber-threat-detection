@@ -161,9 +161,6 @@ cyber-threat-detection/
 │   │       └── predict.py
 │   ├── saved_models/                       # Local model binary registry (.pkl, .json, .pt)
 │   │   └── .gitkeep
-│   ├── notebooks/                          # Jupyter Notebooks for research
-│   │   ├── eda.ipynb                       # Exploratory Data Analysis & feature discovery
-│   │   └── model_eval.ipynb                # Offline training metrics (ROC, Confusion Matrix, F1)
 │   └── requirements.txt                    # ML dependencies (numpy, pandas, scikit-learn, nfstream, etc.)
 │
 ├── frontend/                               # Single-page Application dashboard
@@ -201,17 +198,11 @@ cyber-threat-detection/
 │   └── Dockerfile                          # Multi-stage build for frontend production distribution
 │
 ├── infra/                                  # Deployment Configurations
-│   ├── docker-compose.yml                  # Production compose file launching all services
-│   ├── docker-compose.dev.yml              # Dev compose file linking local code mounts & debug ports
 │   └── k8s/                                # Kubernetes manifests
 │       ├── namespace.yaml                  # Isolates resources into `cyber-threat-detection`
 │       ├── backend-deployment.yaml         # Configures FastAPI replica sets and pod definitions
-│       ├── frontend-deployment.yaml        # Deploys NGINX serving frontend static assets
-│       ├── postgres-statefulset.yaml       # Persistent database with stable network identifiers
-│       ├── redis-deployment.yaml           # Deployment for in-memory message broker
 │       ├── configmap.yaml                  # Application configuration variables (non-sensitive)
-│       ├── secrets.yaml                    # Encrypted db passwords and blockchain keys
-│       └── ingress.yaml                    # Directs traffic from domain root to frontend/backend services
+│       └── secrets.yaml                    # Encrypted db passwords and blockchain keys
 │
 ├── data/                                   # Datasets repository
 │   ├── pcaps/                              # Raw network packet captures (gitignored)
@@ -231,11 +222,7 @@ cyber-threat-detection/
 │
 ├── scripts/                                # Maintenance & Testing Utilities
 │   ├── generate_benign_traffic.sh          # Simulates benign users using iperf3/Ostinato/TRex
-│   ├── generate_attacks.sh                 # Simulates attacks using hping3, dnscat2, or iodine
-│   ├── replay_pcap.py                      # Replays PCAP files back onto network interfaces
-│   ├── live_mode_launcher.py               # Orchestrates local capture systems and pipes to extractor
-│   ├── throughput_benchmark.py             # Measures event ingestion speed and classification delay
-│   └── seed_db.py                          # Populates databases with synthetic alerts for demo sessions
+│   └── generate_attacks.sh                 # Simulates attacks using hping3, dnscat2, or iodine
 │
 ├── docs/                                   # Detailed Technical Specifications
 │   ├── architecture.md                     # Component design patterns, state diagrams & flow charts
@@ -254,7 +241,7 @@ cyber-threat-detection/
 │
 ├── .gitignore                              # Excludes credentials, saved model binaries, dataset folders, etc.
 ├── .env.example                            # Configuration environment template for workspace root
-├── docker-compose.yml                      # Root convenience compose linking back to infra/docker-compose.yml
+├── docker-compose.yml                      # Local backend, Redis, and frontend stack
 └── README.md                               # This documentation file
 ```
 
