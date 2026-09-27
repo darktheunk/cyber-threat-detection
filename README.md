@@ -1,6 +1,6 @@
-# UniThreat AI
+# TheThirdEYE
 
-UniThreat is a passive network-threat demo that reads labeled Zeek-style logs,
+TheThirdEYE is a passive network-threat demo that reads labeled Zeek-style logs,
 exports alerts for six threat families, and serves them through a FastAPI API
 and Vite dashboard. It does not decrypt traffic or take active response actions.
 
